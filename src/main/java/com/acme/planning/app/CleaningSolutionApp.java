@@ -13,6 +13,7 @@ import com.acme.planning.model.CleaningSolution;
 import com.acme.planning.model.DayOfWeek;
 import com.acme.planning.model.House;
 import com.acme.planning.model.HouseCleaningSpot;
+import com.acme.planning.model.Location;
 
 public class CleaningSolutionApp {
 
@@ -76,16 +77,41 @@ public class CleaningSolutionApp {
 		DayOfWeek thursday = new DayOfWeek("Thursday");
 		DayOfWeek friday = new DayOfWeek("Friday");
 
-
-		
 		Cleaner cleaner1 = new Cleaner(new Long(111), monday);
+		Location location1 = new Location();
+		location1.setDistance(1);
+		cleaner1.setCleanerLocation(location1);
+		
 		Cleaner cleaner2 = new Cleaner(new Long(112), tuesday);
+		Location location2 = new Location();
+		location2.setDistance(2);
+		cleaner2.setCleanerLocation(location2);
+		
 		Cleaner cleaner3 = new Cleaner(new Long(113), wednesday);
+		Location location3 = new Location();
+		location3.setDistance(3);
+		cleaner3.setCleanerLocation(location3);
+		
 		Cleaner cleaner4 = new Cleaner(new Long(114), thursday);
+		Location location4 = new Location();
+		location4.setDistance(4);
+		cleaner4.setCleanerLocation(location4);
+		
 		Cleaner cleaner5 = new Cleaner(new Long(115), thursday);
+		Location location5 = new Location();
+		location5.setDistance(5);
+		cleaner5.setCleanerLocation(location5);
+		
 		Cleaner cleaner6 = new Cleaner(new Long(116), thursday);
+		Location location6 = new Location();
+		location6.setDistance(1);
+		cleaner6.setCleanerLocation(location6);
+		
 		Cleaner cleaner7 = new Cleaner(new Long(117), thursday);
-
+		Location location7 = new Location();
+		location7.setDistance(3);
+		cleaner1.setCleanerLocation(location7);
+		
 		cleanersList.add(cleaner1);
 		cleanersList.add(cleaner2);
 		cleanersList.add(cleaner3);
@@ -104,6 +130,9 @@ public class CleaningSolutionApp {
 		
 		DayOfWeek dayOfWeek1 = new DayOfWeek(new Long(1), "Monday");
 		House house1 = new House(new Long(1111), "A", dayOfWeek1);
+		Location location1 = new Location();
+		location1.setDistance(1);
+		house1.setHouseLocation(location1);
 		HouseCleaningSpot houseCleaningSpot11 = new HouseCleaningSpot(new Long(11),house1, 101);
 		HouseCleaningSpot houseCleaningSpot12 = new HouseCleaningSpot(new Long(12),house1, 102);
 		HouseCleaningSpot houseCleaningSpot13 = new HouseCleaningSpot(new Long(13),house1, 103);
@@ -111,12 +140,18 @@ public class CleaningSolutionApp {
 		
 		DayOfWeek dayOfWeek2 = new DayOfWeek(new Long(2), "Tuesday");
 		House house2 = new House(new Long(2222), "B", dayOfWeek1);
+		Location location2 = new Location();
+		location2.setDistance(2);
+		house2.setHouseLocation(location2);
 		HouseCleaningSpot houseCleaningSpot21 = new HouseCleaningSpot(new Long(21),house2, 201);
 		HouseCleaningSpot houseCleaningSpot22 = new HouseCleaningSpot(new Long(22),house2, 202);	
 	
 
 		DayOfWeek dayOfWeek3 = new DayOfWeek(new Long(3), "Wednesday");
 		House house3 = new House(new Long(3333), "C", dayOfWeek3);
+		Location location3 = new Location();
+		location3.setDistance(3);
+		house3.setHouseLocation(location3);
 		HouseCleaningSpot houseCleaningSpot31 = new HouseCleaningSpot(new Long(31),house3, 301);
 		HouseCleaningSpot houseCleaningSpot32 = new HouseCleaningSpot(new Long(32),house3, 302);
 		HouseCleaningSpot houseCleaningSpot33 = new HouseCleaningSpot(new Long(33),house3, 303);
@@ -126,11 +161,17 @@ public class CleaningSolutionApp {
 		
 		DayOfWeek dayOfWeek4 = new DayOfWeek(new Long(4), "Thursday");
 		House house4 = new House(new Long(4444), "D", dayOfWeek4);
+		Location location4 = new Location();
+		location4.setDistance(4);
+		house4.setHouseLocation(location4);
 		HouseCleaningSpot houseCleaningSpot41 = new HouseCleaningSpot(new Long(41),house4, 401);
 		HouseCleaningSpot houseCleaningSpot42 = new HouseCleaningSpot(new Long(42),house4, 402);
 		
 		DayOfWeek dayOfWeek5 = new DayOfWeek(new Long(5), "Friday");
 		House house5 = new House(new Long(5555), "E", dayOfWeek3);
+		Location location5 = new Location();
+		location5.setDistance(5);
+		house5.setHouseLocation(location5);
 		HouseCleaningSpot houseCleaningSpot51 = new HouseCleaningSpot(new Long(51),house5, 501);
 		HouseCleaningSpot houseCleaningSpot52 = new HouseCleaningSpot(new Long(52),house5, 502);
 		HouseCleaningSpot houseCleaningSpot53 = new HouseCleaningSpot(new Long(53),house5, 503);

@@ -62,13 +62,19 @@ public class HouseCleaningSpot {
 		this.cleaningSpotIndex = cleaningSpotIndex;
 	}
 
-	@PlanningVariable(valueRangeProviderRefs = "cleanerRange")
+	@PlanningVariable(valueRangeProviderRefs = "cleanerRange", nullable = true)
 	public Cleaner getCleaner() {
 		return cleaner;
 	}
 
 	public void setCleaner(Cleaner cleaner) {
 		this.cleaner = cleaner;
+	}
+	
+	public int distanceFromCleanerToHouse(){
+		return 1;
+		//return cleaner.getCleanerLocation().getDistance();
+		
 	}
 
 }

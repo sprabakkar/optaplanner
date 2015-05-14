@@ -1,11 +1,14 @@
 package com.acme.planning.housecleaning;
     dialect "java"
 
-import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScoreHolder;
+//import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScoreHolder;
+import org.optaplanner.core.api.score.buildin.hardmediumsoft.HardMediumSoftScoreHolder;
 
 import com.acme.planning.model.HouseCleaningSpot;
+import com.acme.planning.model.Cleaner;
 
-global HardSoftScoreHolder scoreHolder;
+//global HardSoftScoreHolder scoreHolder;
+global HardMediumSoftScoreHolder scoreHolder;
 
 // ############################################################################
 // Hard constraints
@@ -18,13 +21,24 @@ then
    scoreHolder.addHardConstraintMatch(kcontext, -1);
 end
 
+// ############################################################################
+// Medium constraints
+// ############################################################################
+
+rule "overconstrained: leave as little possible unassigned spots"
+    when
+        HouseCleaningSpot(cleaner == null)
+    then
+        scoreHolder.addMediumConstraintMatch(kcontext, -1);
+end
 
 // ############################################################################
 // Soft constraints
 // ############################################################################
-//rule "Minimize traveling distance"
-//when
-  // House($d : houseLocation.getDistance())
-//then
-  // scoreHolder.addSoftConstraintMatch(kcontext, - $d);
-//end
+
+rule "Minimize traveling distance"
+when
+   HouseCleaningSpot($d : distanceFromCleanerToHouse)
+then
+   scoreHolder.addSoftConstraintMatch(kcontext, - $d);
+end

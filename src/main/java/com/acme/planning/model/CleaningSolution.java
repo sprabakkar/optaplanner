@@ -9,34 +9,46 @@ import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty
 import org.optaplanner.core.api.domain.solution.PlanningSolution;
 import org.optaplanner.core.api.domain.solution.Solution;
 import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
+import org.optaplanner.core.api.score.buildin.hardmediumsoft.HardMediumSoftScore;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
 
 @PlanningSolution
-public class CleaningSolution implements Serializable, Solution<HardSoftScore> {
+public class CleaningSolution implements Serializable, Solution<HardMediumSoftScore> {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private HardSoftScore score;
+	//private HardSoftScore score;
+	private HardMediumSoftScore score;
 
 	private List<Cleaner> cleanerList;
 	private List<HouseCleaningSpot> houseCleaningSpotList;
 	private List<House> houseList;
 
-	public HardSoftScore getScore() {
+/*	public HardMediumSoftScore getScore() {
 		return score;
 	}
 
 	public void setScore(HardSoftScore score) {
 		this.score = score;
-	}
+	}*/
 
+	
+	
 	public Collection<? extends Object> getProblemFacts() {
         List<Object> facts = new ArrayList<Object>();
         facts.addAll(cleanerList);
         //facts.addAll(houseList);
         return facts;
+	}
+
+	public HardMediumSoftScore getScore() {
+		return score;
+	}
+
+	public void setScore(HardMediumSoftScore score) {
+		this.score = score;
 	}
 
 	@ValueRangeProvider(id = "cleanerRange")
