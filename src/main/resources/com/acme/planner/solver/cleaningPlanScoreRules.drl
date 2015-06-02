@@ -40,5 +40,7 @@ rule "Minimize traveling distance"
 when
    HouseCleaningSpot($d : distanceFromCleanerToHouse)
 then
-   scoreHolder.addSoftConstraintMatch(kcontext, - $d);
+   scoreHolder.addSoftConstraintMatch(kcontext, -$d);
+   //int a = 1;
+   //System.out.println("Step is now ::: "+a++);
 end

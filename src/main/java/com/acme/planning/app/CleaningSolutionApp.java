@@ -92,25 +92,30 @@ public class CleaningSolutionApp {
 		location3.setDistance(3);
 		cleaner3.setCleanerLocation(location3);
 		
-		Cleaner cleaner4 = new Cleaner(new Long(114), thursday);
+		Cleaner cleaner4 = new Cleaner(new Long(114), wednesday);
 		Location location4 = new Location();
 		location4.setDistance(4);
 		cleaner4.setCleanerLocation(location4);
 		
-		Cleaner cleaner5 = new Cleaner(new Long(115), thursday);
+		Cleaner cleaner5 = new Cleaner(new Long(115), wednesday);
 		Location location5 = new Location();
 		location5.setDistance(5);
 		cleaner5.setCleanerLocation(location5);
 		
-		Cleaner cleaner6 = new Cleaner(new Long(116), thursday);
+		Cleaner cleaner6 = new Cleaner(new Long(116), wednesday);
 		Location location6 = new Location();
-		location6.setDistance(1);
+		location6.setDistance(6);
 		cleaner6.setCleanerLocation(location6);
 		
 		Cleaner cleaner7 = new Cleaner(new Long(117), thursday);
 		Location location7 = new Location();
-		location7.setDistance(3);
-		cleaner1.setCleanerLocation(location7);
+		location7.setDistance(7);
+		cleaner7.setCleanerLocation(location7);
+		
+		Cleaner cleaner8 = new Cleaner(new Long(118), thursday);
+		Location location8 = new Location();
+		location8.setDistance(8);
+		cleaner8.setCleanerLocation(location8);		
 		
 		cleanersList.add(cleaner1);
 		cleanersList.add(cleaner2);
@@ -118,7 +123,8 @@ public class CleaningSolutionApp {
 		cleanersList.add(cleaner4);
 		cleanersList.add(cleaner5);
 		cleanersList.add(cleaner6);
-		cleanersList.add(cleaner7);
+		//cleanersList.add(cleaner7);
+		//cleanersList.add(cleaner8);
 		System.out.println("Size of the cleaners list is ::: "+cleanersList.size());
 
 		return cleanersList;
@@ -134,7 +140,9 @@ public class CleaningSolutionApp {
 		location1.setDistance(1);
 		house1.setHouseLocation(location1);
 		HouseCleaningSpot houseCleaningSpot11 = new HouseCleaningSpot(new Long(11),house1, 101);
+		
 		HouseCleaningSpot houseCleaningSpot12 = new HouseCleaningSpot(new Long(12),house1, 102);
+		
 		HouseCleaningSpot houseCleaningSpot13 = new HouseCleaningSpot(new Long(13),house1, 103);
 		
 		
@@ -144,7 +152,8 @@ public class CleaningSolutionApp {
 		location2.setDistance(2);
 		house2.setHouseLocation(location2);
 		HouseCleaningSpot houseCleaningSpot21 = new HouseCleaningSpot(new Long(21),house2, 201);
-		HouseCleaningSpot houseCleaningSpot22 = new HouseCleaningSpot(new Long(22),house2, 202);	
+		
+		HouseCleaningSpot houseCleaningSpot22 = new HouseCleaningSpot(new Long(22),house2, 202);
 	
 
 		DayOfWeek dayOfWeek3 = new DayOfWeek(new Long(3), "Wednesday");
@@ -167,7 +176,8 @@ public class CleaningSolutionApp {
 		HouseCleaningSpot houseCleaningSpot41 = new HouseCleaningSpot(new Long(41),house4, 401);
 		HouseCleaningSpot houseCleaningSpot42 = new HouseCleaningSpot(new Long(42),house4, 402);
 		
-		DayOfWeek dayOfWeek5 = new DayOfWeek(new Long(5), "Friday");
+		//DayOfWeek dayOfWeek5 = new DayOfWeek(new Long(5), "Friday");
+		DayOfWeek dayOfWeek5 = new DayOfWeek(new Long(5), "Wednesday");
 		House house5 = new House(new Long(5555), "E", dayOfWeek3);
 		Location location5 = new Location();
 		location5.setDistance(5);

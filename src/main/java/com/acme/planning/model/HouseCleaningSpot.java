@@ -70,11 +70,9 @@ public class HouseCleaningSpot {
 	public void setCleaner(Cleaner cleaner) {
 		this.cleaner = cleaner;
 	}
-	
-	public int distanceFromCleanerToHouse(){
-		return 1;
-		//return cleaner.getCleanerLocation().getDistance();
-		
-	}
 
+	public int distanceFromCleanerToHouse(){
+		return house.getHouseLocation().getDistance();	
+	}
+	
 }
