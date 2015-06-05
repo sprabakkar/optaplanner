@@ -30,21 +30,9 @@ public class CleaningSolutionUtil {
 		CleaningSolution unsolvedCleaningSolution = createCleaningSolution();
 		solver.solve(unsolvedCleaningSolution);
 		CleaningSolution solvedCloudBalance = (CleaningSolution) solver.getBestSolution();
-		System.out.println("\nSolved CleaningProblem with 5 houses with 15 house cleaning spots and 7 cleaners for a week:\n"+toDisplayString3(solvedCloudBalance));
+		System.out.println("\nSolved CleaningProblem with 5 houses with 15 house cleaning spots and 7 cleaners for a week:\n"+toDisplayString2(solvedCloudBalance));
 
 	}
-    public static String toDisplayString(CleaningSolution cleaningSolution) {
-        StringBuilder displayString = new StringBuilder();
-        String housetype;
-        for (HouseCleaningSpot houseCleaningSpot : cleaningSolution.getHouseCleaningSpotList()) {
-            Cleaner cleaner = houseCleaningSpot.getCleaner();
-            displayString.append("  House:::").append(houseCleaningSpot.getHouse().getId()).append(" -> ")
-            .append("  HCSpot:::").append(houseCleaningSpot.getCleaningSpotIndex()).append(" -> ")
-            .append("  Day:::").append(houseCleaningSpot.getHouse().getDayOfWeek().getDayId()).append(" -> ")
-            .append("  Cleaner:::").append(cleaner == null ? null : cleaner.getId()).append("\n");
-        }
-        return displayString.toString();
-    }
 	protected Solver createSolver() {
 		SolverFactory solverFactory = SolverFactory
 				.createFromXmlResource(SOLVER_CONFIG);
@@ -226,14 +214,14 @@ public class CleaningSolutionUtil {
 
 		return houseCleaningSpotList;
 	}
-    public static String toDisplayString3(CleaningSolution cleaningSolution) {
+    public static String toDisplayString2(CleaningSolution cleaningSolution) {
         //StringBuilder displayString = new StringBuilder();
         String rtnVal = "A";
         List<HouseCleaningSpot> houseCleaningSpotList = cleaningSolution.getHouseCleaningSpotList();
         
         List<FinalCleaningSchedule> listHouseCleaningSpot = new ArrayList<FinalCleaningSchedule>();
-        Set<Object> houseSet = new HashSet<>();
-        Set<Object> daySet = new HashSet<>();
+        Set<Object> houseSet = new HashSet<Object>();
+        Set<Object> daySet = new HashSet<Object>();
         
         for (Iterator<HouseCleaningSpot> iterator = houseCleaningSpotList.iterator(); iterator.hasNext();) {
         	FinalCleaningSchedule finalCleaningSchedule = new FinalCleaningSchedule();
@@ -264,77 +252,16 @@ public class CleaningSolutionUtil {
 
         return rtnVal;
     }
-    public static String toDisplayString2(CleaningSolution cleaningSolution) {
+    public static String toDisplayString(CleaningSolution cleaningSolution) {
         StringBuilder displayString = new StringBuilder();
-        List<HouseCleaningSpot> houseCleaningSpotList = cleaningSolution.getHouseCleaningSpotList();
-        
-	for (Iterator iterator = houseCleaningSpotList.iterator(); iterator.hasNext();) {
-		HouseCleaningSpot houseCleaningSpot = (HouseCleaningSpot) iterator.next();
-		String daytype = houseCleaningSpot.getHouse().getDayOfWeek().getDayId();
-		if("Monday".equals(daytype)){
-			if(displayString.toString().contains("Monday")){
-	
-			}else{
-			displayString = displayString.append("Monday \n");
-			}
-            displayString.append("  House:::").append(houseCleaningSpot.getHouse().getId()).append(" -> ")
-            .append("  HCSpot:::").append(houseCleaningSpot.getCleaningSpotIndex()).append(" -> ")
-            .append("  Day:::").append(houseCleaningSpot.getHouse().getDayOfWeek().getDayId()).append(" -> ")
-            .append("  Cleaner:::").append(houseCleaningSpot.getCleaner() == null ? null : houseCleaningSpot.getCleaner().getId()).append("\n");
-		}else if("Tuesday".equals(daytype)){
-			if(displayString.toString().contains("Tuesday")){
-				
-			}else{
-			displayString = displayString.append("Tuesday \n");
-			}
-            displayString.append("  House:::").append(houseCleaningSpot.getHouse().getId()).append(" -> ")
-            .append("  HCSpot:::").append(houseCleaningSpot.getCleaningSpotIndex()).append(" -> ")
-            .append("  Day:::").append(houseCleaningSpot.getHouse().getDayOfWeek().getDayId()).append(" -> ")
-            .append("  Cleaner:::").append(houseCleaningSpot.getCleaner() == null ? null : houseCleaningSpot.getCleaner().getId()).append("\n");
-		}else if("Wednesday".equals(daytype)){
-			if(displayString.toString().contains("Wednesday")){
-				
-			}else{
-			displayString = displayString.append("Wednesday \n");
-			}
-            displayString.append("  House:::").append(houseCleaningSpot.getHouse().getId()).append(" -> ")
-            .append("  HCSpot:::").append(houseCleaningSpot.getCleaningSpotIndex()).append(" -> ")
-            .append("  Day:::").append(houseCleaningSpot.getHouse().getDayOfWeek().getDayId()).append(" -> ")
-            .append("  Cleaner:::").append(houseCleaningSpot.getCleaner() == null ? null : houseCleaningSpot.getCleaner().getId()).append("\n");
-		}else if("Thursday".equals(daytype)){
-			if(displayString.toString().contains("Thursday")){
-				
-			}else{
-			displayString = displayString.append("Thursday \n");
-			}
-            displayString.append("  House:::").append(houseCleaningSpot.getHouse().getId()).append(" -> ")
-            .append("  HCSpot:::").append(houseCleaningSpot.getCleaningSpotIndex()).append(" -> ")
-            .append("  Day:::").append(houseCleaningSpot.getHouse().getDayOfWeek().getDayId()).append(" -> ")
-            .append("  Cleaner:::").append(houseCleaningSpot.getCleaner() == null ? null : houseCleaningSpot.getCleaner().getId()).append("\n");
-		}else if("Friday".equals(daytype)){
-			String housesId = houseCleaningSpot.getHouse().getId();
-			if(displayString.toString().contains("Friday")){
-				
-			}else{
-			displayString = displayString.append("Friday \n");
-			}
-            displayString.append("  House:::").append(houseCleaningSpot.getHouse().getId()).append(" -> ")
-            .append("  HCSpot:::").append(houseCleaningSpot.getCleaningSpotIndex()).append(" -> ")
-            //.append("  Day:::").append(houseCleaningSpot.getHouse().getDayOfWeek().getDayId()).append(" -> ")
-            .append("  Cleaner:::").append(houseCleaningSpot.getCleaner() == null ? null : houseCleaningSpot.getCleaner().getId()).append("\n");
-		}else{
-			System.out.println("Week End");
-		}
-		
-	}
-        
-/*        for (HouseCleaningSpot houseCleaningSpot : cleaningSolution.getHouseCleaningSpotList()) {
+        String housetype;
+        for (HouseCleaningSpot houseCleaningSpot : cleaningSolution.getHouseCleaningSpotList()) {
             Cleaner cleaner = houseCleaningSpot.getCleaner();
             displayString.append("  House:::").append(houseCleaningSpot.getHouse().getId()).append(" -> ")
             .append("  HCSpot:::").append(houseCleaningSpot.getCleaningSpotIndex()).append(" -> ")
             .append("  Day:::").append(houseCleaningSpot.getHouse().getDayOfWeek().getDayId()).append(" -> ")
             .append("  Cleaner:::").append(cleaner == null ? null : cleaner.getId()).append("\n");
-        }*/
+        }
         return displayString.toString();
     }
 }
