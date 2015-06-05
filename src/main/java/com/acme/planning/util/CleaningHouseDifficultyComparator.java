@@ -20,6 +20,7 @@ public class CleaningHouseDifficultyComparator implements Comparator<HouseCleani
                 // TODO experiment with (aLatitude - bLatitude) % 10
         		.append(countMap.get(a.getHouse().getDayOfWeek()), countMap.get(b.getHouse().getDayOfWeek()))
                 .append(a.getId(), b.getId())
+                .append(a.getCleaningSpotIndex(), b.getCleaningSpotIndex())
                 .toComparison();
     }
 

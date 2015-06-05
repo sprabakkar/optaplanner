@@ -2,7 +2,7 @@ package com.acme.planning.model;
 
 public class Cleaner {
 
-	private Long id;
+	private Long id= 0L;
 	private DayOfWeek dayOfWeek;
 	private Location cleanerLocation;
 
