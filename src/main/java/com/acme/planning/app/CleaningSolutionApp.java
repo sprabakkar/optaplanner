@@ -30,8 +30,9 @@ public class CleaningSolutionApp {
 		CleaningSolution unsolvedCleaningSolution = createCleaningSolution();
 		solver.solve(unsolvedCleaningSolution);
 		CleaningSolution solvedCloudBalance = (CleaningSolution) solver.getBestSolution();
-		System.out.println("\nSolved CleaningProblem :\n"+toDisplayString3(solvedCloudBalance));
-
+		System.out.println("\nSolved CleaningProblem :\n");
+		List<FinalCleaningSchedule> planningSolutionResponseObj =  getPlanningSolutionObject(solvedCloudBalance);
+		System.out.println(planningSolutionResponseObj.size());
 	}
 
 	protected Solver createSolver() {
@@ -58,9 +59,8 @@ public class CleaningSolutionApp {
         }
         return displayString.toString();
     }
-    public static String toDisplayString3(CleaningSolution cleaningSolution) {
-        //StringBuilder displayString = new StringBuilder();
-        String rtnVal = "A";
+    public static List<FinalCleaningSchedule> getPlanningSolutionObject(CleaningSolution cleaningSolution) {
+    	FinalCleaningSchedule finalCleaningSchedule = null;
         List<HouseCleaningSpot> houseCleaningSpotList = cleaningSolution.getHouseCleaningSpotList();
         
         List<FinalCleaningSchedule> listHouseCleaningSpot = new ArrayList<FinalCleaningSchedule>();
@@ -68,10 +68,8 @@ public class CleaningSolutionApp {
         Set<Object> daySet = new HashSet<Object>();
         
         for (Iterator<HouseCleaningSpot> iterator = houseCleaningSpotList.iterator(); iterator.hasNext();) {
-        	FinalCleaningSchedule finalCleaningSchedule = new FinalCleaningSchedule();
+        	finalCleaningSchedule = new FinalCleaningSchedule();
         	HouseCleaningSpot houseCleaningSpot = (HouseCleaningSpot) iterator.next();
-
-        	//System.out.println("Size of House Set is "+houseSet.size());
         	finalCleaningSchedule.setHouseId(houseCleaningSpot.getHouse().getId());
         	finalCleaningSchedule.setHouseCleaningSpot(String.valueOf(houseCleaningSpot.getCleaningSpotIndex()));
         	finalCleaningSchedule.setDayId(houseCleaningSpot.getHouse().getDayOfWeek().getDayId());
@@ -87,7 +85,7 @@ public class CleaningSolutionApp {
 		}
         System.out.println("listHouseCleaningSpot ::: "+listHouseCleaningSpot.size());
         for (Iterator<FinalCleaningSchedule> iterator = listHouseCleaningSpot.iterator(); iterator.hasNext();) {
-			FinalCleaningSchedule finalCleaningSchedule = (FinalCleaningSchedule) iterator.next();
+			finalCleaningSchedule = (FinalCleaningSchedule) iterator.next();
 			//System.out.println(finalCleaningSchedule.toString());
         	if(!houseSet.contains(finalCleaningSchedule.getHouseId())){
         		houseSet.add(finalCleaningSchedule.getHouseId());
@@ -95,8 +93,6 @@ public class CleaningSolutionApp {
         		System.out.println("House Id is ::: "+finalCleaningSchedule.getHouseId());
         		if(!daySet.contains(finalCleaningSchedule.getDayId())){
             		daySet.add(finalCleaningSchedule.getDayId());
-            		//System.out.println("Cleaning day is ::: "+finalCleaningSchedule.getDayId());
-            		//System.out.println("============================================================");
         		}
         		System.out.println("Cleaning spot "+finalCleaningSchedule.getHouseCleaningSpot()+" assigned to cleaner "+finalCleaningSchedule.getCleanerId()+" on "+finalCleaningSchedule.getDayId());
         	}else if(houseSet.contains(finalCleaningSchedule.getHouseId())){
@@ -104,7 +100,7 @@ public class CleaningSolutionApp {
         	}
 		}
 
-        return rtnVal;
+        return listHouseCleaningSpot;
     }
 
 	private static CleaningSolution createCleaningSolution() {
@@ -270,7 +266,7 @@ public class CleaningSolutionApp {
 		houseCleaningSpotList.add(houseCleaningSpot63);
 
 		
-		System.out.println("Size of the houseCleaningSpotList list is ::: "+houseCleaningSpotList.size());
+		//System.out.println("Size of the houseCleaningSpotList list is ::: "+houseCleaningSpotList.size());
 
 		return houseCleaningSpotList;
 	}
