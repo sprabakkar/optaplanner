@@ -64,8 +64,8 @@ public class CleaningSolutionApp {
         List<HouseCleaningSpot> houseCleaningSpotList = cleaningSolution.getHouseCleaningSpotList();
         
         List<FinalCleaningSchedule> listHouseCleaningSpot = new ArrayList<FinalCleaningSchedule>();
-        Set<Object> houseSet = new HashSet<>();
-        Set<Object> daySet = new HashSet<>();
+        Set<Object> houseSet = new HashSet<Object>();
+        Set<Object> daySet = new HashSet<Object>();
         
         for (Iterator<HouseCleaningSpot> iterator = houseCleaningSpotList.iterator(); iterator.hasNext();) {
         	FinalCleaningSchedule finalCleaningSchedule = new FinalCleaningSchedule();
