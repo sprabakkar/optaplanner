@@ -5,6 +5,8 @@ public class Cleaner {
 	private Long id= 0L;
 	private DayOfWeek dayOfWeek;
 	private Location cleanerLocation;
+	private int maxWorkHours;
+	private int dailyWorkHours;
 
 
 
@@ -41,6 +43,22 @@ public class Cleaner {
 
 	public void setCleanerLocation(Location cleanerLocation) {
 		this.cleanerLocation = cleanerLocation;
+	}
+
+	public int getMaxWorkHours() {
+		return maxWorkHours;
+	}
+
+	public void setMaxWorkHours(int maxWorkHours) {
+		this.maxWorkHours = maxWorkHours;
+	}
+
+	public int getDailyWorkHours() {
+		return dailyWorkHours;
+	}
+
+	public void setDailyWorkHours(int dailyWorkHours) {
+		this.dailyWorkHours = dailyWorkHours;
 	}
 
 }

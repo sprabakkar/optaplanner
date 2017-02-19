@@ -74,50 +74,66 @@ public class CleaningSolutionUtil {
 		Location location1 = new Location();
 		location1.setDistance(1);
 		cleaner1.setCleanerLocation(location1);
+		cleaner1.setMaxWorkHours(40);
+		cleaner1.setDailyWorkHours(8);
 		
 		Cleaner cleaner2 = new Cleaner(new Long(112), tuesday);
 		Location location2 = new Location();
 		location2.setDistance(2);
 		cleaner2.setCleanerLocation(location2);
+		cleaner2.setMaxWorkHours(40);
+		cleaner2.setDailyWorkHours(8);
 		
 		Cleaner cleaner3 = new Cleaner(new Long(113), wednesday);
 		Location location3 = new Location();
 		location3.setDistance(3);
 		cleaner3.setCleanerLocation(location3);
+		cleaner3.setMaxWorkHours(40);
+		cleaner3.setDailyWorkHours(8);
 		
 		Cleaner cleaner4 = new Cleaner(new Long(114), wednesday);
 		Location location4 = new Location();
 		location4.setDistance(4);
 		cleaner4.setCleanerLocation(location4);
+		cleaner4.setMaxWorkHours(40);
+		cleaner4.setDailyWorkHours(8);
 		
 		Cleaner cleaner5 = new Cleaner(new Long(115), wednesday);
 		Location location5 = new Location();
 		location5.setDistance(5);
 		cleaner5.setCleanerLocation(location5);
+		cleaner5.setMaxWorkHours(40);
+		cleaner5.setDailyWorkHours(8);
 		
 		Cleaner cleaner6 = new Cleaner(new Long(116), wednesday);
 		Location location6 = new Location();
 		location6.setDistance(6);
 		cleaner6.setCleanerLocation(location6);
+		cleaner6.setMaxWorkHours(40);
+		cleaner6.setDailyWorkHours(8);
 		
 		Cleaner cleaner7 = new Cleaner(new Long(117), thursday);
 		Location location7 = new Location();
 		location7.setDistance(7);
 		cleaner7.setCleanerLocation(location7);
+		cleaner7.setMaxWorkHours(40);
+		cleaner7.setDailyWorkHours(8);
 		
 		Cleaner cleaner8 = new Cleaner(new Long(118), thursday);
 		Location location8 = new Location();
 		location8.setDistance(8);
-		cleaner8.setCleanerLocation(location8);		
+		cleaner8.setCleanerLocation(location8);
+		cleaner8.setMaxWorkHours(40);
+		cleaner8.setDailyWorkHours(8);
 		
 		cleanersList.add(cleaner1);
 		cleanersList.add(cleaner2);
 		cleanersList.add(cleaner3);
 		cleanersList.add(cleaner4);
-		cleanersList.add(cleaner5);
+/*		cleanersList.add(cleaner5);
 		cleanersList.add(cleaner6);
-		//cleanersList.add(cleaner7);
-		//cleanersList.add(cleaner8);
+		cleanersList.add(cleaner7);
+		cleanersList.add(cleaner8);*/
 		System.out.println("Size of the cleaners list is ::: "+cleanersList.size());
 
 		return cleanersList;

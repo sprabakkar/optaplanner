@@ -1,10 +1,13 @@
 package com.acme.planning.model;
 
+import java.time.LocalDate;
+
 public class FinalCleaningSchedule {
 	private String houseId;
 	private String houseCleaningSpot;
 	private String dayId;
 	private String cleanerId;
+	private LocalDate shiftDate;
 
 	public FinalCleaningSchedule() {
 		super();
@@ -49,6 +52,14 @@ public class FinalCleaningSchedule {
 
 	public void setCleanerId(String cleanerId) {
 		this.cleanerId = cleanerId;
+	}
+
+	public LocalDate getShiftDate() {
+		return shiftDate;
+	}
+
+	public void setShiftDate(LocalDate shiftDate) {
+		this.shiftDate = shiftDate;
 	}
 
 	@Override

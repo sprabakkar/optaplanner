@@ -6,6 +6,13 @@ public class House {
 	private String id;
 	private DayOfWeek dayOfWeek;
 	private Location houseLocation;
+	private ShiftDate shiftDate;
+
+	public House(Long houseId, String id) {
+		super();
+		this.houseId = houseId;
+		this.id = id;
+	}
 
 	public House(String id, DayOfWeek dayOfWeek, Location houseLocation) {
 		super();
@@ -19,6 +26,14 @@ public class House {
 		this.houseId = houseId;
 		this.id = id;
 		this.dayOfWeek = dayOfWeek;
+	}
+
+	public House(Long houseId, String id, DayOfWeek dayOfWeek, ShiftDate shiftDate) {
+		super();
+		this.houseId = houseId;
+		this.id = id;
+		this.dayOfWeek = dayOfWeek;
+		this.shiftDate = shiftDate;
 	}
 
 	public House(String id, DayOfWeek dayOfWeek) {
@@ -57,6 +72,14 @@ public class House {
 
 	public void setHouseLocation(Location houseLocation) {
 		this.houseLocation = houseLocation;
+	}
+
+	public ShiftDate getShiftDate() {
+		return shiftDate;
+	}
+
+	public void setShiftDate(ShiftDate shiftDate) {
+		this.shiftDate = shiftDate;
 	}
 
 }
