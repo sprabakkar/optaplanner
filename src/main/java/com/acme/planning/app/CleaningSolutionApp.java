@@ -137,14 +137,14 @@ public class CleaningSolutionApp {
 		location1.setDistance(1);
 		cleaner1.setCleanerLocation(location1);
 		cleaner1.setMaxWorkHours(40);
-		cleaner1.setDailyWorkHours(8);
+		cleaner1.setDailyWorkHours(10);
 		
 		Cleaner cleaner2 = new Cleaner(new Long(112), tuesday);
 		Location location2 = new Location();
 		location2.setDistance(2);
 		cleaner2.setCleanerLocation(location2);
 		cleaner2.setMaxWorkHours(40);
-		cleaner2.setDailyWorkHours(8);
+		cleaner2.setDailyWorkHours(10);
 		
 		Cleaner cleaner3 = new Cleaner(new Long(113), wednesday);
 		Location location3 = new Location();
